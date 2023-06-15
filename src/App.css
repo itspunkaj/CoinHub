@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  font-family: Montserrat;
+}
+
+.app {
+  background-color: #f5efe6;
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-noise.png");
+  color: rgb(0, 0, 0);
+  min-height: 100vh;
+
+}
