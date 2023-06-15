@@ -24,15 +24,15 @@ const styles = {
 function Carousel() {
     const [trending, setTrending] = useState([]);
     const { currency, symbol } = CryptoState();
-    const fetchTrendingCoins = async () => {
-        const { data } = await axios.get(TrendingCoins(currency));
-        setTrending(data);
-    };
+    // const fetchTrendingCoins = async () => {
+    //     const { data } = await axios.get(TrendingCoins(currency));
+    //     setTrending(data);
+    // };
 
-    useEffect(() => {
-        fetchTrendingCoins();
-    }, [currency]);
-    console.table(trending);
+    // useEffect(() => {
+    //     fetchTrendingCoins();
+    // }, [currency]);
+    // console.table(trending);
     const items = trending.map((coin) => {
         let profit = coin.price_change_percentage_24h >= 0;
 

@@ -7,13 +7,25 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import React, { useState } from 'react'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { ButtonGroup, Link } from '@mui/material';
+import { makeStyles } from 'tss-react/mui';
 
 
 
-function LoginButton() {
+
+function Login() {
     const [open,setOpen] = useState();
 
-
+    const useStyles = makeStyles()(()=>{
+      return {
+        dialog : {
+          fontFamily : "Montserrat",
+          fontWeight : 900,
+        }
+      }
+    })
+    
+    const {classes} = useStyles();
 
     function handleClick() {
         setOpen(true);
@@ -23,6 +35,7 @@ function LoginButton() {
     }
     return (
         <>
+            
             <Button variant='contained' disableElevation
                 style={{
                     width: 100,
@@ -32,8 +45,16 @@ function LoginButton() {
                 startIcon={<AccountCircleIcon />}
                 onClick={()=>handleClick()}
             >Login</Button>
-            <Dialog open={open} onClose={()=>handleClose()}>
-        <DialogTitle style={{textAlign : "center"}}>Login</DialogTitle>
+    
+            <Dialog open={open} onClose={()=>handleClose()}><div style={{
+              backgroundColor : "#E3F4F4",
+            }}>
+        <DialogTitle className= {classes.dialog} style={{textAlign : "center",
+        }}></DialogTitle>
+        <ButtonGroup>
+          <Button>Login</Button>
+          <Button>Sign Up</Button>
+        </ButtonGroup>
         <DialogContent>
           {/* <DialogContentText>
             To subscribe to this website, please enter your email address here. We
@@ -46,7 +67,7 @@ function LoginButton() {
             label="Email"
             type="email"
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
           <TextField
             autoFocus
@@ -55,16 +76,27 @@ function LoginButton() {
             label="Password"
             type="password"
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
         </DialogContent>
-        <DialogActions>
+        <Link style={{
+          textAlign:"right",
+          paddingRight: 30,
+          fontFamily: "Montserrat",
+          cursor: "pointer",
+          }}
+          >Not Registered? Sign Up</Link>
+        <DialogActions style={{
+          alignItems:"center",
+          justifyContent : "center",
+        }}>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleClose}>Subscribe</Button>
         </DialogActions>
+        </div>
       </Dialog>
         </>
     )
 }
 
-export default LoginButton
+export default Login
