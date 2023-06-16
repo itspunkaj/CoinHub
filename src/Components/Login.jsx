@@ -14,7 +14,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 
 function Login() {
-  const [open, setOpen] = useState();
+  const [open, setOpen] = useState(true);
 
   const useStyles = makeStyles()(() => {
     return {
