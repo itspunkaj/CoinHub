@@ -4,7 +4,7 @@ import {
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { CryptoState } from '../CryptoContext';
-import LoginButton from './LoginButton';
+import Login from './Login';
 
 
 const styles = {
@@ -40,7 +40,7 @@ function Header() {
               <MenuItem value={'USD'} >USD</MenuItem>
               <MenuItem value={'INR'} >INR</MenuItem>
             </Select>
-            <LoginButton/>
+            <Login/>
           </Toolbar>
       </AppBar>
 
