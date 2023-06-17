@@ -8,6 +8,7 @@ import { chartDays } from '../config/data';
 import SelectButton from './SelectButton';
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto'
+
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
@@ -52,10 +53,11 @@ const CoinInfo = ({ coin }) => {
     },
     type: "light",
   });
+
   return (
     <ThemeProvider theme={darkTheme}>
       <div className={classes.container}>
-        {!historicData | flag===false ? (
+        {!historicData | flag === false ? (
           <CircularProgress
             style={{ color: "blue" }}
             size={250}
@@ -101,7 +103,8 @@ const CoinInfo = ({ coin }) => {
               {chartDays.map((day) => (
                 <SelectButton
                   key={day.value}
-                  onClick={() => {setDays(day.value);
+                  onClick={() => {
+                    setDays(day.value);
                     setflag(false);
                   }}
                   selected={day.value === days}

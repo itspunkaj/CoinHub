@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { CryptoState } from '../CryptoContext'
-import { TrendingCoins } from '../config/api'
+import { CryptoState } from '../../CryptoContext'
+import { TrendingCoins } from '../../config/api'
 import { Link } from 'react-router-dom'
 import AliceCarousel from 'react-alice-carousel';
-import { numberWithCommas } from './CoinsTable'
+import { numberWithCommas } from '../CoinsTable'
 const styles = {
     carousel: {
         height: "50%",
