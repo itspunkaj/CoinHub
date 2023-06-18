@@ -44,14 +44,15 @@ function SignupDialog() {
         <Button
           variant='contained'
           style={{
-            width: "120%",
+            width: "100%",
+            backgroundColor : "blue",
           }}>Sign Up</Button>
         <Typography style={{ padding: 0, margin: 10, }}>-----------OR-----------</Typography>
         <Button
           startIcon={<GoogleIcon />}
           variant='contained'
           style={{
-            width: "120%",
+            width: "100%",
             backgroundColor: "green",
           }}>Sign In with Google</Button>
 

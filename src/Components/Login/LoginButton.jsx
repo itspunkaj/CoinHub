@@ -62,6 +62,7 @@ function LoginButton() {
         height: "100%",
         width: "50%",
         padding: 20,
+        color: "blue",
       },
     }
   })
@@ -86,6 +87,7 @@ function LoginButton() {
           width: 100,
           height: 40,
           marginRight: 15,
+          backgroundColor : "blue",
         }}
         startIcon={<AccountCircleIcon />}
         onClick={handleClick}
@@ -97,13 +99,11 @@ function LoginButton() {
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description">
         <div style={{
-          backgroundColor: "#E3F4F4",
-          height: 450,
           fontFamily: "Montserrat",
           overflow: "hidden",
         }}>
           <Box>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <Box sx={{ borderBottom:1,  borderColor: 'divider' }}>
               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                 <Tab className={classes.tab} label="Login" {...a11yProps(0)} />
                 <Tab className={classes.tab} label="Sign Up" {...a11yProps(1)} />

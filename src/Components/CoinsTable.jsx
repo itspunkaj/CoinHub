@@ -15,7 +15,12 @@ const useStyles = makeStyles()(() => {
             '&:hover': {
                 backgroundColor: "#E3F4F4",
             },
-        }
+        },
+        pagination: {
+            "& .MuiPaginationItem-root": {
+                color: "blue",
+            },
+        },
     }
 
 })
@@ -34,16 +39,16 @@ function CoinsTable() {
 
     const history = useNavigate();
 
-    const fetchCoins = async () => {
-        setLoading(true);
-        const { data } = await axios.get(CoinList(currency));
-        setCoins(data);
-        setLoading(false);
-    }
+    // const fetchCoins = async () => {
+    //     setLoading(true);
+    //     const { data } = await axios.get(CoinList(currency));
+    //     setCoins(data);
+    //     setLoading(false);
+    // }
 
-    useEffect(() => {
-        fetchCoins();
-    }, [currency]);
+    // useEffect(() => {
+    //     fetchCoins();
+    // }, [currency]);
 
     const lightTheme = createTheme({
         palette: {
@@ -161,10 +166,10 @@ function CoinsTable() {
                 }
             </TableContainer>
             <Pagination
-                color='primary'
+                className={classes.pagination}
                 style={{
                     padding: 20,
-                    widht: "100%",
+                    width: "100%",
                     display: "flex",
                     justifyContent: "center",
                 }}

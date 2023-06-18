@@ -7,26 +7,26 @@ function LoginDialog() {
       display: "flex",
       flexDirection: "column",
       width: 350,
-      padding: 0,
+      padding: 1,
     }}>
       <TextField
         margin="dense"
         id="name"
         label="Email"
         type="email"
-        fullWidth
         variant="outlined"
+        style = {{width : "auto",}}
       />
       <TextField
         margin="dense"
         id="name"
         label="Password"
         type="password"
-        fullWidth
         variant="outlined"
       />
 
       <DialogActions style={{
+        width : "90%",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -36,14 +36,15 @@ function LoginDialog() {
         <Button
           variant='contained'
           style={{
-            width: "120%",
+            width: "100%",
+            backgroundColor : "blue",
           }}>Login</Button>
         <Typography style={{ padding: 0, margin: 10, }}>-----------OR-----------</Typography>
         <Button
           startIcon={<GoogleIcon />}
           variant='contained'
           style={{
-            width: "120%",
+            width: "100%",
             backgroundColor: "green",
           }}>Sign In with Google</Button>
       </DialogActions>
