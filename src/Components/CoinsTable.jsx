@@ -39,16 +39,16 @@ function CoinsTable() {
 
     const history = useNavigate();
 
-    // const fetchCoins = async () => {
-    //     setLoading(true);
-    //     const { data } = await axios.get(CoinList(currency));
-    //     setCoins(data);
-    //     setLoading(false);
-    // }
+    const fetchCoins = async () => {
+        setLoading(true);
+        const { data } = await axios.get(CoinList(currency));
+        setCoins(data);
+        setLoading(false);
+    }
 
-    // useEffect(() => {
-    //     fetchCoins();
-    // }, [currency]);
+    useEffect(() => {
+        fetchCoins();
+    }, [currency]);
 
     const lightTheme = createTheme({
         palette: {
