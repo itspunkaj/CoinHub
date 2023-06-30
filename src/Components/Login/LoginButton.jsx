@@ -5,11 +5,12 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Typography, Box, } from '@mui/material';
+import { Typography, Box, useMediaQuery, } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 import Slide from '@mui/material/Slide';
 import LoginDialog from './LoginDialog'
 import SignupDialog from './SignupDialog';
+import { useTheme } from '@mui/material/styles';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -53,6 +54,8 @@ function LoginButton() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(0)
 
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const useStyles = makeStyles()(() => {
     return {
@@ -97,7 +100,9 @@ function LoginButton() {
         TransitionComponent={Transition}
         keepMounted
         onClose={handleClose}
-        aria-describedby="alert-dialog-slide-description">
+        aria-describedby="alert-dialog-slide-description"
+        fullScreen= {fullScreen}
+        >
         <div style={{
           fontFamily: "Montserrat",
           overflow: "hidden",

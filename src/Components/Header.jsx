@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { AppBar, Toolbar, Typography, Select, MenuItem, } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
